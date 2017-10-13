@@ -1,0 +1,149 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Apigee Okta Demo",
+		"_postman_id": "8c603522-2c21-e3fa-097d-5f848f37aa12",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Apigee Passwd grant Get Access Token Demo",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "{{clientId}}",
+						"password": "{{clientSecret}}",
+						"saveHelperData": true,
+						"showPassword": false
+					}
+				},
+				"url": "https://payaldemo-test.apigee.net/oktaoauth/token",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic ",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "user",
+							"value": "{{username}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://requestb.in/1ea6sfl1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "offline_access",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ApigeeValidateAccessToken",
+			"request": {
+				"url": "https://payalajwani-trial-test.apigee.net/jwt-bearer/validate",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "assertion",
+							"value": "eyJhbciOiJSUzI1NiIsImtpZCI6IjJCN3BtRUY5aFcyZnRGUjZqcVNFSjZnaFZ1WmdRS18zOHFZN0ZyUkJrMGcifQ.eyJ2ZXIiOjEsImp0aSI6IkFULnBPbmtQWkRNM29QajNaYU82QzlzaEdJMDNOT2hlTzhGRzNtUDk1UUVzMm8uNHJnK2FheHp6UktpMDRwRkVuWERheDFwSjlJTHlDMS83Z3lKVVZoMzFhRT0iLCJpc3MiOiJodHRwczovL3BheWFsZGVtby5va3RhLmNvbS9vYXV0aDIvYXVzMXhyZTJ6djZqZ1ZSTXoxdDciLCJhdWQiOiJodHRwczovL3JlcXVlc3RiLmluLzFlYTZzZmwxIiwiaWF0IjoxNTAwMzk4OTAzLCJleHAiOjE1MDA0ODUzMDMsImNpZCI6IjZkWXNCV2ZON2VaOEdnd2czQ2NGRFpPQUtqQWtPaVhwIiwidWlkIjoiMDB1MWo4aGd1MFFaNGJJdkMxdDciLCJzY3AiOlsib2ZmbGluZV9hY2Nlc3MiXSwic3ViIjoicHRzYWlwYW5AZ21haWwuY29tIn0.lclHcEjKoQc8Zi9H3Ai0QNWCFenJDE_Zx9v5xi1hHeWm-AnC9K8Wyx-69vCsns7pb-rShSdcC3XPrKpzD8DWGUZn-yMkDksuGmzqEugwMbbiUjolk0aE0xObwgD95H7p_LhEHMqbdrV6KYlOmlIeP0L_-k6hJRwyNYxvDNKZej64ZeNgsaJDWbCTfVRk0lcUUeLxr8Ve3tTx3g9dpy1L1eghbiJ_P23nt0LZovrMtkWhXkPu6IVu4zgPF70ADLaJOlaYIOytysrbJHLXUHIlLdB8VEagfac1YQSTR5zujDlYEfSj97dqhCn0d_dFLSyt8TQ5slM2wzDl-fmS3RpmMQ",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Introspect Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "nh9b6dqpUNBHjfBIxb9bpJ4hki39rDeu",
+						"password": "PWGLWAAW9knqCRos",
+						"saveHelperData": true,
+						"showPassword": false
+					}
+				},
+				"url": "{{url}}/oauth2/{{authorizationServerId}}/v1/introspect",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic bmg5YjZkcXBVTkJIamZCSXhiOWJwSjRoa2kzOXJEZXU6UFdHTFdBQVc5a25xQ1Jvcw==",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjJCN3BtRUY5aFcyZnRGUjZqcVNFSjZnaFZ1WmdRS18zOHFZN0ZyUkJrMGcifQ.eyJ2ZXIiOjEsImp0aSI6IkFULndPdEdqMy00ZmFfRTVlZkV4aFFQNEdjTVlyeVpqTnRnVTRMd1FKQ2JZLXcuaG5GbFZIRGw4cWNjRkx5TDY0RXJzaklqRHA1TGpNc29CRGlYZ1dwQXZ5ST0iLCJpc3MiOiJodHRwczovL3BheWFsZGVtby5va3RhLmNvbS9vYXV0aDIvYXVzMXhyZTJ6djZqZ1ZSTXoxdDciLCJhdWQiOiJodHRwczovL3JlcXVlc3RiLmluLzFhdHUycnMxIiwiaWF0IjoxNDk5OTYxNDI5LCJleHAiOjE1MDAwNDc4MjksImNpZCI6Im5oOWI2ZHFwVU5CSGpmQkl4YjlicEo0aGtpMzlyRGV1IiwidWlkIjoiMDB1MWo4aGd1MFFaNGJJdkMxdDciLCJzY3AiOlsib2ZmbGluZV9hY2Nlc3MiXSwic3ViIjoicHRzYWlwYW5AZ21haWwuY29tIn0.L6c21QIZarY4HY925lg4kjmEf3STxzTaFKNlYV_-6wQfJf5HRYb03TwL9RUVVj6Bf2Xeb1BvPtuhfDkcYuWB6xVNmgBdQ7wbO_sev1DgvPt79UhqCrD0Q1kv2jj3AZo7cae86XJTMjQIZwDtv48ifeTxv11Ho5pkcPbeI36UcS7y97VTeyAzAH6hvCDQItwO2hZx1N1t-YMG95MlnnbQ-VC7itEgtrBlmiu1bFQEbw283AKfE6-OlS9E0hpkTM3VXo1k75_3Ke9XdltzKEf5pJjIrfZK_8H-TAcEjZodA1366m2aqRPhCvVKy_EfAJIJY_ba5TReAhZ-DO9w-5zrIA",
+							"type": "text"
+						},
+						{
+							"key": "token_type_hint",
+							"value": "access_token",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
